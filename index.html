@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lirik Lagu</title>
+
+    <style>
+
+        body {
+
+            font-family: "Segoe UI", sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            color: #fff;
+
+            background: linear-gradient(180deg, #6a4dfc, #7b5dfc);
+
+            overflow-x: hidden;
+
+            position: relative;
+
+        }
+
+        .container {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 20px;
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: #fff;
+
+            margin-bottom: 5px;
+
+        }
+
+        h2 {
+
+            text-align: center;
+
+            font-weight: normal;
+
+            color: #e0d7ff;
+
+            margin-top: 0;
+
+            font-size: 1.1em;
+
+        }
+
+        .lyrics {
+
+            background: rgba(255,255,255,0.08);
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+            white-space: pre-line;
+
+            font-size: 1.05em;
+
+            backdrop-filter: blur(5px);
+
+        }
+
+        .verse { margin-bottom: 15px; }
+
+        .lyrics span:hover {
+
+            background-color: rgba(255, 250, 139, 0.4);
+
+            transition: 0.2s ease-in-out;
+
+        }
+
+        /* Lingkaran dekoratif */
+
+        .bg-circle {
+
+            position: fixed;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            animation: float 8s ease-in-out infinite;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+        .bg-circle.big { width: 300px; height: 300px; top: -100px; left: -100px; }
+
+        .bg-circle.small { width: 150px; height: 150px; bottom: 100px; right: -50px; animation-delay: 4s; }
+
+        @keyframes float {
+
+            0%, 100% { transform: translateY(0); }
+
+            50% { transform: translateY(20px); }
+
+        }
+
+        /* Partikel */
+
+        .particle {
+
+            position: fixed;
+
+            font-size: 20px;
+
+            animation: moveParticle linear infinite;
+
+            opacity: 0.8;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+        }
+
+        @keyframes moveParticle {
+
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+
+            100% { transform: translate(var(--x-move), 100vh) rotate(360deg); opacity: 0; }
+
+        }
+
+        /* Tombol toggle */
+
+        .toggle-btn {
+
+            position: fixed;
+
+            top: 15px;
+
+            right: 15px;
+
+            background: rgba(255,255,255,0.15);
+
+            border: none;
+
+            border-radius: 50%;
+
+            width: 45px;
+
+            height: 45px;
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 10;
+
+            backdrop-filter: blur(5px);
+
+            transition: background 0.3s;
+
+        }
+
+        .toggle-btn:hover {
+
+            background: rgba(255,255,255,0.3);
+
+        }
+
+        /* Audio Player */
+
+        .audio-player {
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+        }
+
+        audio {
+
+            width: 100%;
+
+            border-radius: 8px;
+
+            outline: none;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Tombol toggle efek -->
+
+    <button class="toggle-btn" title="Hidup/Matikan Efek">❄</button>
+
+    <!-- Dekorasi lingkaran -->
+
+    <div class="bg-circle big"></div>
+
+    <div class="bg-circle small"></div>
+
+    <div class="container">
+
+        <h1>Dan</h1>
+
+        <h2>Sheila On 7</h2>
+
+        <!-- Audio Player -->
+
+        <div class="audio-player">
+
+            <audio controls>
+
+                <source src="lagu.mp3" type="audio/mpeg">
+
+                Browser Anda tidak mendukung pemutar audio.
+
+            </audio>
+
+        </div>
+
+        <div class="lyrics">
+
+            <div class="verse">
+
+<span>Dan...
+
+Dan bila esok datang kembali
+
+Seperti sedia kala
+
+Di mana kau bisa bercanda</span><br>
+
+<span>Dan...
+
+Perlahan kau pun lupakan aku
+
+Mimpi burukmu
+
+Di mana telah kutancapkan duri tajam
+
+Kau pun menangis, menangis sedih
+
+Maafkan aku</span>
+
+<span>Dan...
+
+Bukan maksudku, bukan inginku
+
+Melukaimu
+
+Sadarkah kau di sini ku pun terluka
+
+Melupakanmu, menepikanmu
+
+Maafkan aku</span>
+
+<span>Lupakanlah saja diriku
+
+Bila itu bisa membuatmu
+
+Kembali bersinar dan berpijar
+
+Seperti dulu kala</span>
+
+<span>Caci-maki saja diriku
+
+Bila itu bisa membuatmu
+
+Kembali bersinar dan berpijar
+
+Seperti dulu kala</span>
+
+<span>Dan...
+
+Bukan maksudku, bukan inginku
+
+Melukaimu
+
+Sadarkah kau di sini ku pun terluka
+
+Melupakanmu, menepikanmu
+
+Maafkan aku</span>
+
+<span>Lupakanlah saja diriku
+
+Bila itu bisa membuatmu
+
+Kembali bersinar dan berpijar
+
+Seperti dulu kala</span>
+
+<span>Caci-maki saja diriku
+
+Bila itu bisa membuatmu
+
+Kembali bersinar dan berpijar
+
+Seperti dulu kala</span>
+
+<span>Lupakanlah saja diriku
+
+Bila itu bisa membuatmu
+
+Kembali bersinar dan berpijar
+
+Seperti dulu kala</span>
+
+<span>Caci-maki saja diriku
+
+Bila itu bisa membuatmu
+
+Kembali bersinar dan berpijar
+
+Seperti dulu kala</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const symbols = ["❄", "⭐", "⚡", "🪶"];
+
+        const colors = ["#ffffff", "#ffeb3b", "#ffd700", "#d500f9"];
+
+        const numParticles = 30;
+
+        let particles = [];
+
+        function createParticles() {
+
+            for (let i = 0; i < numParticles; i++) {
+
+                const particle = document.createElement("span");
+
+                particle.className = "particle";
+
+                particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+                particle.style.left = Math.random() * 100 + "vw";
+
+                particle.style.top = Math.random() * -100 + "px";
+
+                particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                particle.style.fontSize = 16 + Math.random() * 20 + "px";
+
+                particle.style.setProperty("--x-move", `${Math.random() * 200 - 100}px`);
+
+                particle.style.animationDuration = 5 + Math.random() * 5 + "s";
+
+                particle.style.animationDelay = Math.random() * 5 + "s";
+
+                document.body.appendChild(particle);
+
+                particles.push(particle);
+
+            }
+
+        }
+
+        function removeParticles() {
+
+            particles.forEach(p => p.remove());
+
+            particles = [];
+
+        }
+
+        createParticles();
+
+        const toggleBtn = document.querySelector(".toggle-btn");
+
+        let effectOn = true;
+
+        toggleBtn.addEventListener("click", () => {
+
+            effectOn = !effectOn;
+
+            if (effectOn) {
+
+                document.querySelectorAll(".bg-circle").forEach(el => el.style.display = "block");
+
+                createParticles();
+
+                toggleBtn.textContent = "❄";
+
+            } else {
+
+                document.querySelectorAll(".bg-circle").forEach(el => el.style.display = "none");
+
+                removeParticles();
+
+                toggleBtn.textContent = "⚪";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
